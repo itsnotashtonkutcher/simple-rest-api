@@ -14,6 +14,8 @@ RUN apt-get update \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
+ENV IPSTACK_KEY="1111111111111111111111"
+
 RUN curl -sSL https://install.python-poetry.org | python3 -
 
 ENV PATH="$POETRY_HOME/bin:$PATH"
