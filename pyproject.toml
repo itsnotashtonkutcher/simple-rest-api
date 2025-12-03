@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "simple-rest-api"
+version = "0.1.0"
+description = "FastAPI for storing Geo Location data"
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.123.0"
+uvicorn = { extras = ["standard"], version = "^0.38.0" }
+sqlalchemy = "^2.0.44"
+ipstack = "^0.1.4"
+pydantic-settings = "^2.12.0"
+aiosqlite = "^0.21.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^9.0.1"
+
+[build-system]
+requires = ["poetry-core>=1.5.1"]
+build-backend = "poetry.core.masonry.api"
