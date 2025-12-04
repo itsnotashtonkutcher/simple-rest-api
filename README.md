@@ -21,4 +21,38 @@ It is worth mentioning, that I don't store URL data as **many URLs might resolve
 If there was a strong requirement to differentiate URLs in single IP range (for example to eliminate situation when someone added 3 different URLs, which share same IP, and with single delete, with URL specified, all 3 are gone), then I would add field for URL and fill only one field at the time (or create separate models). 
 That way I would differentiate "paths"- one when IP is specified and the other when URL. 
 
-###
+### Database choice
+As I was more focused on implementation rather than perfect setup of environment, I decided to go with sqlite, as it helped me with easy prototyping.
+In real-life development I would probably choose normal sql server, like postgresql.
+
+### Security aspects
+As it is simple application with lack of personalized resources I decided to not implement it.
+What I would rather go for, is some kind of request limitation, so application cannot be "overused", by one particular user.
+
+## How to run application
+***
+### Running locally:
+1. create virtual environment, activate it, install poetry and then packages:
+```commandline
+python -m venv .venv
+# linux
+source .venv/bin/activate
+# windows
+./.venv/Scripts/Activate.ps1
+pip install poetry
+poetry install
+```
+2. run application:
+```commandline
+uvicorn app:app
+```
+
+### Running container:
+1. create image:
+```commandline
+docker build -t app .
+```
+2. run image:
+```commandline
+docker run -p8000:8000 app
+```
