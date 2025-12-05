@@ -42,7 +42,8 @@ source .venv/bin/activate
 pip install poetry
 poetry install
 ```
-2. run application:
+2. set IPSTACK_KEY environemt variable with valid Ipstack key
+3. run application:
 ```commandline
 uvicorn app:app
 ```
@@ -52,7 +53,8 @@ uvicorn app:app
 ```commandline
 docker build -t app .
 ```
-2. run image:
+2. set IPSTACK_KEY in Dockerfile to valid Ipstack key
+3. run image:
 ```commandline
 docker run -p8000:8000 app
 ```
